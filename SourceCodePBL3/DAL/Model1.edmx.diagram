@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dfde71410c984963a4ef368e2874292c" Name="Diagram1">
+        <EntityTypeShape EntityType="Demo_PBLModel.BanAn" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Demo_PBLModel.DatMonAn" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Demo_PBLModel.HoaDon" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Demo_PBLModel.Kho" Width="1.5" PointX="5.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Demo_PBLModel.LoaiMonAn" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Demo_PBLModel.MonAn" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Demo_PBLModel.sysdiagram" Width="1.5" PointX="7.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Demo_PBLModel.ThanhVien" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <AssociationConnector Association="Demo_PBLModel.fk_DatMon2" ManuallyRouted="false" />
+        <AssociationConnector Association="Demo_PBLModel.fk_HoaDon1" ManuallyRouted="false" />
+        <AssociationConnector Association="Demo_PBLModel.fk_DatMon1" ManuallyRouted="false" />
+        <AssociationConnector Association="Demo_PBLModel.fk_HoaDon2" ManuallyRouted="false" />
+        <AssociationConnector Association="Demo_PBLModel.fk_Kho" ManuallyRouted="false" />
+        <AssociationConnector Association="Demo_PBLModel.fk_MonAn" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
