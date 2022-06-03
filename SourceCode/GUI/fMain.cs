@@ -190,5 +190,31 @@ namespace SourceCode.GUI
                 }
             }
         }
+
+        private void dataDatMon_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex == 3 && e.RowIndex > -1)
+            {
+                string TenMonAn = this.dataDatMon.SelectedRows[0].Cells["colTenMon"].Value.ToString();
+                for (int i = 0; i < temp.Count; i++)
+                {
+                    MonAn s = BLL_QLMA.Instance.GetMonAnByMaMonAn(temp[i].MaMonAn);
+                    if (s.TenMonAn.Equals(TenMonAn))
+                    {
+                        temp[i].SoLuong -= 1;
+                        temp[i].TongTien -= s.GiaTien;
+                        if (temp[i].SoLuong == 0) temp.RemoveAt(i);
+                        break;
+                    }
+                }
+                LoadDSDatMon();
+                decimal Tong = 0;
+                foreach (DatMonAn i in temp)
+                {
+                    Tong += i.TongTien;
+                }
+                this.txtTien.Text = string.Format(new CultureInfo("vi-VN"), "{0:#,##0.00}", Tong);
+            }
+        }
     }
 }

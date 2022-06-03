@@ -42,10 +42,6 @@ namespace SourceCode.GUI
             this.txtTien = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dataDatMon = new System.Windows.Forms.DataGridView();
-            this.colTenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGiaTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDel = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnOrder = new System.Windows.Forms.Button();
             this.btnCancle = new System.Windows.Forms.Button();
@@ -75,6 +71,10 @@ namespace SourceCode.GUI
             this.label5 = new System.Windows.Forms.Label();
             this.cbbThanhToan = new System.Windows.Forms.ComboBox();
             this.btnHoanThanh = new System.Windows.Forms.Button();
+            this.colTenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGiaTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDel = new System.Windows.Forms.DataGridViewButtonColumn();
             this.menuStrip1.SuspendLayout();
             this.pnlBill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataDatMon)).BeginInit();
@@ -220,37 +220,7 @@ namespace SourceCode.GUI
             this.dataDatMon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataDatMon.Size = new System.Drawing.Size(516, 372);
             this.dataDatMon.TabIndex = 0;
-            // 
-            // colTenMon
-            // 
-            this.colTenMon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colTenMon.FillWeight = 124.7772F;
-            this.colTenMon.HeaderText = "Tên món";
-            this.colTenMon.MinimumWidth = 6;
-            this.colTenMon.Name = "colTenMon";
-            // 
-            // colSoLuong
-            // 
-            this.colSoLuong.FillWeight = 124.7772F;
-            this.colSoLuong.HeaderText = "Số lượng";
-            this.colSoLuong.MinimumWidth = 6;
-            this.colSoLuong.Name = "colSoLuong";
-            // 
-            // colGiaTien
-            // 
-            this.colGiaTien.FillWeight = 124.7772F;
-            this.colGiaTien.HeaderText = "Giá tiền";
-            this.colGiaTien.MinimumWidth = 6;
-            this.colGiaTien.Name = "colGiaTien";
-            // 
-            // colDel
-            // 
-            this.colDel.FillWeight = 25.66845F;
-            this.colDel.HeaderText = "X";
-            this.colDel.MinimumWidth = 6;
-            this.colDel.Name = "colDel";
-            this.colDel.Text = "X";
-            this.colDel.UseColumnTextForButtonValue = true;
+            this.dataDatMon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataDatMon_CellContentClick);
             // 
             // btnConfirm
             // 
@@ -614,6 +584,37 @@ namespace SourceCode.GUI
             this.btnHoanThanh.UseVisualStyleBackColor = true;
             this.btnHoanThanh.Click += new System.EventHandler(this.btnHoanThanh_Click);
             // 
+            // colTenMon
+            // 
+            this.colTenMon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTenMon.FillWeight = 124.7772F;
+            this.colTenMon.HeaderText = "Tên món";
+            this.colTenMon.MinimumWidth = 6;
+            this.colTenMon.Name = "colTenMon";
+            // 
+            // colSoLuong
+            // 
+            this.colSoLuong.FillWeight = 124.7772F;
+            this.colSoLuong.HeaderText = "Số lượng";
+            this.colSoLuong.MinimumWidth = 6;
+            this.colSoLuong.Name = "colSoLuong";
+            // 
+            // colGiaTien
+            // 
+            this.colGiaTien.FillWeight = 124.7772F;
+            this.colGiaTien.HeaderText = "Giá tiền";
+            this.colGiaTien.MinimumWidth = 6;
+            this.colGiaTien.Name = "colGiaTien";
+            // 
+            // colDel
+            // 
+            this.colDel.FillWeight = 25.66845F;
+            this.colDel.HeaderText = "-";
+            this.colDel.MinimumWidth = 6;
+            this.colDel.Name = "colDel";
+            this.colDel.Text = "-";
+            this.colDel.UseColumnTextForButtonValue = true;
+            // 
             // fMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -685,14 +686,14 @@ namespace SourceCode.GUI
         private System.Windows.Forms.NumericUpDown numMon;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTenMon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSoLuong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colGiaTien;
-        private System.Windows.Forms.DataGridViewButtonColumn colDel;
         private System.Windows.Forms.ComboBox cbbThanhToan;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnHoanThanh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTenMon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colGiaTien;
+        private System.Windows.Forms.DataGridViewButtonColumn colDel;
     }
 }
 
