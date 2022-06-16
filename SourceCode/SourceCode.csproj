@@ -59,6 +59,7 @@
     <Compile Include="BLL\BLL_QLHoaDon.cs" />
     <Compile Include="BLL\BLL_QLMA.cs" />
     <Compile Include="BLL\BLL_QLNV.cs" />
+    <Compile Include="BLL\BLL_ValidateData.cs" />
     <Compile Include="DAL\CreateDB.cs" />
     <Compile Include="DAL\tBanAn.cs" />
     <Compile Include="DAL\tDatMonAn.cs" />

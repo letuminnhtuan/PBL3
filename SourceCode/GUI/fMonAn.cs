@@ -54,6 +54,14 @@ namespace SourceCode.GUI
                 GiaTien = Convert.ToDecimal(this.txtGiaTien.Text),
                 SoLuong = Convert.ToInt32(this.txtSoLuong.Text),
             };
+            if (this.txtMaMonAn.Enabled) // => ADD
+            {
+                if (BLL_QLMA.Instance.GetMonAnByMaMonAn(data.MaMonAn) != null)
+                {
+                    MessageBox.Show("Món ăn đã tồn tại!", "Tồn tại", MessageBoxButtons.OKCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button2);
+                    return;
+                }
+            }
             BLL_QLMA.Instance.AddUpdateMonAn(data);
             MyDel();
         }

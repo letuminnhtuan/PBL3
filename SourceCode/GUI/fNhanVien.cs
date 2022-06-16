@@ -59,10 +59,17 @@ namespace SourceCode.GUI
                 SDT = this.txtSDT.Text,
                 NgayLamViec = this.dateLamViec.Value,
             };
+            if (this.txtTK.Enabled) // => ADD
+            {
+                if (BLL_QLNV.Instance.GetThanhVienByTenDangNhap(data.TenDangNhap) != null)
+                {
+                    MessageBox.Show("Nhân viên đã tồn tại!", "Tồn tại", MessageBoxButtons.OKCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button2);
+                    return;
+                }
+            }
             BLL_QLNV.Instance.AddUpdateThanhVien(data);
             D();
         }
-
         private void btnCancle_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có muốn thoát?", "Thoát", MessageBoxButtons.OKCancel, MessageBoxIcon.None, MessageBoxDefaultButton.Button2) == DialogResult.OK)
@@ -70,7 +77,6 @@ namespace SourceCode.GUI
                 this.Dispose();
             }
         }
-
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             this.txtMK.UseSystemPasswordChar = !this.txtMK.UseSystemPasswordChar;
