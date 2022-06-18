@@ -30,21 +30,22 @@ namespace SourceCode.GUI
         {
             if(BLL_QLNV.Instance.GetThanhVienByTenDangNhap(this.TenDangNhap) != null)
             {
-                foreach(CBBItem i in this.cbbLoaiNhanVien.Items)
+                ThanhVien data = BLL_QLNV.Instance.GetThanhVienByTenDangNhap(this.TenDangNhap);
+                foreach (CBBItem i in this.cbbLoaiNhanVien.Items)
                 {
-                    if (i.Key.Equals(BLL_QLNV.Instance.GetThanhVienByTenDangNhap(this.TenDangNhap).LoaiThanhVien))
+                    if (i.Key.Equals(data.LoaiThanhVien))
                     {
                         this.cbbLoaiNhanVien.SelectedItem = i;
                         break;
                     }
                 }
-                this.txtTenNhanVien.Text = BLL_QLNV.Instance.GetThanhVienByTenDangNhap(this.TenDangNhap).TenThanhVien;
-                this.txtTK.Text = BLL_QLNV.Instance.GetThanhVienByTenDangNhap(this.TenDangNhap).TenDangNhap;
+                this.txtTenNhanVien.Text = data.TenThanhVien;
+                this.txtTK.Text = data.TenDangNhap;
                 this.txtTK.Enabled = false;
-                this.txtMK.Text = BLL_QLNV.Instance.GetThanhVienByTenDangNhap(this.TenDangNhap).MatKhau;
-                this.txtLuong.Text = BLL_QLNV.Instance.GetThanhVienByTenDangNhap(this.TenDangNhap).Luong.ToString();
-                this.dateLamViec.Value = BLL_QLNV.Instance.GetThanhVienByTenDangNhap(this.TenDangNhap).NgayLamViec;
-                this.txtSDT.Text = BLL_QLNV.Instance.GetThanhVienByTenDangNhap(this.TenDangNhap).SDT;
+                this.txtMK.Text = data.MatKhau;
+                this.txtLuong.Text = data.Luong.ToString();
+                this.dateLamViec.Value = data.NgayLamViec;
+                this.txtSDT.Text = data.SDT;
             }
         }
         private void btnOK_Click(object sender, EventArgs e)

@@ -148,5 +148,15 @@ namespace SourceCode.GUI
                 this.txtTongTien.Text = string.Format(new CultureInfo("vi-VN"), "{0:#,##0.00}", TongTien);
             }
         }
+
+        private void btnXemHoaDon_Click(object sender, EventArgs e)
+        {
+            if(this.dataHoaDon.SelectedRows.Count == 1)
+            {
+                int MaHoaDon = Convert.ToInt32(this.dataHoaDon.SelectedRows[0].Cells["MaHoaDon"].Value.ToString());
+                fHoaDon f = new fHoaDon(MaHoaDon);
+                f.ShowDialog();
+            }
+        }
     }
 }

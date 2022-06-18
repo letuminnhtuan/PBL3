@@ -65,10 +65,24 @@ namespace SourceCode.BLL
             }
             return data;
         }
-        public tThanhVien GetThanhVienByTenDangNhap(string TenDangNhap)
+        public ThanhVien GetThanhVienByTenDangNhap(string TenDangNhap)
         {
             tThanhVien data = db._ThanhVien.Find(TenDangNhap);
-            return data;
+            ThanhVien TV = null;
+            if (data != null)
+            {
+                TV = new ThanhVien
+                {
+                    LoaiThanhVien = data.LoaiThanhVien,
+                    TenThanhVien = data.TenThanhVien,
+                    TenDangNhap = data.TenDangNhap,
+                    MatKhau = data.MatKhau,
+                    Luong = data.Luong,
+                    NgayLamViec = data.NgayLamViec,
+                    SDT = data.SDT,
+                };
+            }
+            return TV;
         }
         public void AddUpdateThanhVien(ThanhVien ThanhVien)
         {

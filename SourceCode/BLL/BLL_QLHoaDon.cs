@@ -82,5 +82,21 @@ namespace SourceCode.BLL
             }
             return data;
         }
+        public List<DatMonAn> GetHoaDonByMaHoaDon(int MaHoaDon)
+        {
+            List<DatMonAn> data = new List<DatMonAn>();
+            var list = db._DatMonAn.Select(p => p).Where(p => p.MaHoaDon == MaHoaDon);
+            foreach (tDatMonAn i in list)
+            {
+                data.Add(new DatMonAn
+                {
+                    MaHoaDon = i.MaHoaDon,
+                    MaMonAn = i.MaMonAn,
+                    SoLuong = i.SoLuong,
+                    TongTien = i.TongTien
+                });
+            }
+            return data;
+        }
     }
 }

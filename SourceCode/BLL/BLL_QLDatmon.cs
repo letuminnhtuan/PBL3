@@ -56,8 +56,15 @@ namespace SourceCode.BLL
                     TongTien = i.TongTien,
                 };
                 db._DatMonAn.Add(temp);
+                UpdateSoLuong(temp.MaMonAn, temp.SoLuong);
                 db.SaveChanges();
             }
+        }
+        public void UpdateSoLuong(string MaMonAn, int SoLuong)
+        {
+            var i = db._Kho.Find(MaMonAn);
+            i.SoLuong -= SoLuong;
+            db.SaveChanges();
         }
         public void SetStatusBanAn(string MaBanAn, bool Status)
         {

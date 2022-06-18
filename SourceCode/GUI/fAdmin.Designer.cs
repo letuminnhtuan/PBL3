@@ -62,6 +62,7 @@ namespace SourceCode.GUI
             this.label1 = new System.Windows.Forms.Label();
             this.dataHoaDon = new System.Windows.Forms.DataGridView();
             this.PageNhanVien = new System.Windows.Forms.TabControl();
+            this.btnXemHoaDon = new System.Windows.Forms.Button();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataNV)).BeginInit();
             this.PageMonAn.SuspendLayout();
@@ -332,6 +333,7 @@ namespace SourceCode.GUI
             // 
             // PageThongKe
             // 
+            this.PageThongKe.Controls.Add(this.btnXemHoaDon);
             this.PageThongKe.Controls.Add(this.txtTongTien);
             this.PageThongKe.Controls.Add(this.label3);
             this.PageThongKe.Controls.Add(this.groupBox1);
@@ -459,6 +461,18 @@ namespace SourceCode.GUI
             this.PageNhanVien.Size = new System.Drawing.Size(983, 567);
             this.PageNhanVien.TabIndex = 0;
             // 
+            // btnXemHoaDon
+            // 
+            this.btnXemHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXemHoaDon.Location = new System.Drawing.Point(834, 26);
+            this.btnXemHoaDon.Margin = new System.Windows.Forms.Padding(2);
+            this.btnXemHoaDon.Name = "btnXemHoaDon";
+            this.btnXemHoaDon.Size = new System.Drawing.Size(137, 29);
+            this.btnXemHoaDon.TabIndex = 5;
+            this.btnXemHoaDon.Text = "Xem hóa đơn";
+            this.btnXemHoaDon.UseVisualStyleBackColor = true;
+            this.btnXemHoaDon.Click += new System.EventHandler(this.btnXemHoaDon_Click);
+            // 
             // fAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -519,5 +533,6 @@ namespace SourceCode.GUI
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataHoaDon;
         private System.Windows.Forms.TabControl PageNhanVien;
+        private System.Windows.Forms.Button btnXemHoaDon;
     }
 }

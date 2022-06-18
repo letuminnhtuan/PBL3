@@ -17,14 +17,14 @@ namespace SourceCode.GUI
     {
         private object o;
         public string Role = "";
-        public string MaNV = "";
+        public string TenDangNhap = "";
         private List<DatMonAn> temp = new List<DatMonAn>();
-        public fMain(string Role, string MaNhanVien)
+        public fMain(string Role, string TenDangNhap)
         {
             this.StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
             this.Role = Role;
-            this.MaNV = MaNhanVien;
+            this.TenDangNhap = TenDangNhap;
             if (!this.Role.Equals("ADMIN")) this.menuQL.Enabled = false;
             LoadCBB();
             LoadStatusBanAn();
@@ -158,7 +158,7 @@ namespace SourceCode.GUI
                         TongTien = Tong,
                         HinhThucTT = this.cbbThanhToan.Text,
                         TrangThaiTT = true,
-                        MaNVOrder = this.MaNV,
+                        MaNVOrder = this.TenDangNhap,
                         NgayThanhToan = this.dateTimePicker1.Value
                     };
                     BLL_QLDatmon.Instance.AddHoaDon(HD);
@@ -224,6 +224,13 @@ namespace SourceCode.GUI
                 }
                 this.txtTien.Text = string.Format(new CultureInfo("vi-VN"), "{0:#,##0.00}", Tong);
             }
+        }
+        private void Infor_Click(object sender, EventArgs e)
+        {
+            ThanhVien data = BLL_QLNV.Instance.GetThanhVienByTenDangNhap(this.TenDangNhap);
+            string Infor = String.Format("Tên thành viên: {0} \nNgày làm việc: {1} \nSố điện thoại: {2} \nLương: {3}",
+                data.TenThanhVien, data.NgayLamViec, data.SDT, data.Luong);
+            MessageBox.Show(Infor, "Thông tin nhân viên");
         }
     }
 }

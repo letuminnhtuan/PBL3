@@ -116,13 +116,14 @@ namespace SourceCode.GUI
             // Infor
             // 
             this.Infor.Name = "Infor";
-            this.Infor.Size = new System.Drawing.Size(150, 26);
+            this.Infor.Size = new System.Drawing.Size(180, 26);
             this.Infor.Text = "Thông tin";
+            this.Infor.Click += new System.EventHandler(this.Infor_Click);
             // 
             // LogOut
             // 
             this.LogOut.Name = "LogOut";
-            this.LogOut.Size = new System.Drawing.Size(150, 26);
+            this.LogOut.Size = new System.Drawing.Size(180, 26);
             this.LogOut.Text = "Đăng xuất";
             this.LogOut.Click += new System.EventHandler(this.LogOut_Click);
             // 
