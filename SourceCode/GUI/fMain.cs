@@ -15,8 +15,10 @@ namespace SourceCode.GUI
 {
     public partial class fMain : Form
     {
+        private object o;
         public string Role = "";
         public string MaNV = "";
+        private List<DatMonAn> temp = new List<DatMonAn>();
         public fMain(string Role, string MaNhanVien)
         {
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -42,7 +44,7 @@ namespace SourceCode.GUI
             };
             foreach(Button i in arr)
             {
-                if (!BLL_QLDatmon.Instance.GetStatusBanAn(i.Text))
+                if (!BLL_QLDatmon.Instance.GetStatusBanAn(i.Text)) // => not complete
                 {
                     i.BackColor = Color.FromArgb(255, 51, 51);
                 }
@@ -80,11 +82,19 @@ namespace SourceCode.GUI
         }
         public void Order(object o, EventArgs e)
         {
+            this.dataDatMon.Rows.Clear();
             this.txtThe.Text = ((Button)o).Text;
             this.o = o;
+            if (!BLL_QLDatmon.Instance.GetStatusBanAn(((Button)o).Text))
+            {
+                List<DatMonAn> data = BLL_QLHoaDon.Instance.GetHoaDonHienTaiByMaBan(((Button)o).Text);
+                foreach (DatMonAn i in data)
+                {
+                    string TenMonAn = BLL_QLMA.Instance.GetMonAnByMaMonAn(i.MaMonAn).TenMonAn;
+                    this.dataDatMon.Rows.Add(TenMonAn, i.SoLuong, string.Format(new CultureInfo("vi-VN"), "{0:#,##0.00}", i.TongTien));
+                }
+            }
         }
-
-        private List<DatMonAn> temp = new List<DatMonAn>();
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             DatMonAn data = new DatMonAn
@@ -131,7 +141,6 @@ namespace SourceCode.GUI
                 this.dataDatMon.Rows.Add(TenMonAn, i.SoLuong, string.Format(new CultureInfo("vi-VN"), "{0:#,##0.00}", i.TongTien));
             }
         }
-        private object o;
         private void btnOrder_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn đã xác nhận đặt món?", "Đặt món", MessageBoxButtons.OKCancel, MessageBoxIcon.None, MessageBoxDefaultButton.Button2) == DialogResult.OK)

@@ -596,7 +596,7 @@ namespace SourceCode.GUI
             this.cbbThanhToan.FormattingEnabled = true;
             this.cbbThanhToan.Items.AddRange(new object[] {
             "Truc tiep",
-            "Chuyen khoang"});
+            "Chuyen khoan"});
             this.cbbThanhToan.Location = new System.Drawing.Point(957, 586);
             this.cbbThanhToan.Margin = new System.Windows.Forms.Padding(2);
             this.cbbThanhToan.Name = "cbbThanhToan";

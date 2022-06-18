@@ -52,7 +52,7 @@ namespace SourceCode.GUI
             this.txtSearchMA = new System.Windows.Forms.TextBox();
             this.dataMonAn = new System.Windows.Forms.DataGridView();
             this.PageThongKe = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTongTien = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dateEnd = new System.Windows.Forms.DateTimePicker();
@@ -332,7 +332,7 @@ namespace SourceCode.GUI
             // 
             // PageThongKe
             // 
-            this.PageThongKe.Controls.Add(this.textBox1);
+            this.PageThongKe.Controls.Add(this.txtTongTien);
             this.PageThongKe.Controls.Add(this.label3);
             this.PageThongKe.Controls.Add(this.groupBox1);
             this.PageThongKe.Controls.Add(this.dataHoaDon);
@@ -346,14 +346,14 @@ namespace SourceCode.GUI
             this.PageThongKe.Text = "Thống kê";
             this.PageThongKe.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtTongTien
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(784, 498);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(189, 28);
-            this.textBox1.TabIndex = 4;
+            this.txtTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTongTien.Location = new System.Drawing.Point(784, 498);
+            this.txtTongTien.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTongTien.Name = "txtTongTien";
+            this.txtTongTien.Size = new System.Drawing.Size(189, 28);
+            this.txtTongTien.TabIndex = 4;
             // 
             // label3
             // 
@@ -509,7 +509,7 @@ namespace SourceCode.GUI
         private System.Windows.Forms.TextBox txtSearchMA;
         private System.Windows.Forms.DataGridView dataMonAn;
         private System.Windows.Forms.TabPage PageThongKe;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTongTien;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DateTimePicker dateEnd;
